@@ -107,9 +107,12 @@ class _NewContactState extends State<NewContact> {
             children: [
               TextButton(onPressed: onCanceled, child: Text('Cancel')),
               const Spacer(),
-              ElevatedButton(
-                onPressed: onSaved,
-                child: const Text("Save"),
+              IgnorePointer(
+                ignoring: typedName == "" ? true : false,
+                child: ElevatedButton(
+                  onPressed: onSaved,
+                  child: const Text("Save"),
+                ),
               ),
             ],
           ),
